@@ -2,3 +2,5 @@
 **/__pycache__
 # Config files containing sensitive information
 config.*
+# Virtual environments
+.venv
