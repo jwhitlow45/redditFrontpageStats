@@ -1,0 +1,4 @@
+# Python cache file
+**/__pycache__
+# Config files containing sensitive information
+config.*
