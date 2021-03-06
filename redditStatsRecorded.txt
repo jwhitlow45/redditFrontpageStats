@@ -1,4 +1,3 @@
-allow_live_comments: Bool
 author: string
 created_utc : datetime?
 domain: string
