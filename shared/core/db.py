@@ -3,9 +3,9 @@ from sqlalchemy import MetaData
 from sqlalchemy import Table, Column, Integer, Float, String, Boolean
 from sqlalchemy.sql.sqltypes import Time
 
-import shared.core.config
+from shared.core import config
 
-engine = create_engine(shared.core.config.SQLEngine.CONNECTION_STR, echo=True)
+engine=create_engine(config.SQLEngine.CONNECTION_STR, echo=True)
 meta=MetaData()
 
 posts = Table(
@@ -37,3 +37,6 @@ posts = Table(
     Column('is_spoiler', Boolean),              # is the post a spoiler
     Column('is_video', Boolean)                 # is the post a video
 )
+
+# Create all defined table objects and store them in metadata
+meta.create_all(engine)

@@ -1,5 +1,6 @@
 import praw
 import pprint
+import shared.core.db
 
 # Config containing personal use script and secret token
 from shared.core.config import Client
