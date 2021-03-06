@@ -2,7 +2,7 @@ import praw
 import pprint
 
 # Config containing personal use script and secret token
-from core.config import Client
+from shared.core.config import Client
 
 reddit = praw.Reddit(
     client_id=Client.ID,

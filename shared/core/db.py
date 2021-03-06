@@ -3,9 +3,9 @@ from sqlalchemy import MetaData
 from sqlalchemy import Table, Column, Integer, Float, String, Boolean
 from sqlalchemy.sql.sqltypes import Time
 
-from . import config
+import shared.core.config
 
-engine = create_engine(config.SQLEngine.CONNECTION_STR, echo=True)
+engine = create_engine(shared.core.config.SQLEngine.CONNECTION_STR, echo=True)
 meta=MetaData()
 
 posts = Table(
