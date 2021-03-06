@@ -12,5 +12,5 @@ reddit = praw.Reddit(
 
 subreddit = reddit.subreddit('all')
 
-for submission in subreddit.hot(limit=1):
+for submission in subreddit.hot(limit=4):
     pprint.pprint(vars(submission))
