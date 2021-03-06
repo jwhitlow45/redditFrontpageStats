@@ -2,7 +2,8 @@
 **/__pycache__
 # Config files containing sensitive information
 config.*
-# Virtual environments
+# Virtual environments and variables
 .venv
+.env
 # VSCode Files
 .vscode
