@@ -2,7 +2,8 @@ from sqlalchemy import create_engine
 from sqlalchemy import MetaData
 from sqlalchemy import Table, Column, Integer, Float, String, Boolean
 from sqlalchemy.sql.sqltypes import Time
-import config
+
+from . import config
 
 engine = create_engine(config.SQLEngine.CONNECTION_STR, echo=True)
 meta=MetaData()
