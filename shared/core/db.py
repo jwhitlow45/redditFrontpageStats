@@ -3,14 +3,18 @@ from sqlalchemy import MetaData
 from sqlalchemy import Table, Column, Integer, Float, String, Boolean
 from sqlalchemy.sql.sqltypes import Time
 
+import pyodbc
+
 from shared.core import config
 
-engine=create_engine(config.SQLEngine.CONNECTION_STR, echo=True)
+# Set pooling to false to allow pyodbc to properly resolve connections
+pyodbc.pooling = False
+engine=create_engine(config.SQLEngine.CONNECTION_STR,)
 meta=MetaData()
 
 posts = Table(
     'posts', meta,
-    Column('id', String, primary_key=True),     # unique id 
+    Column('id', Integer, primary_key=True),    # unique id 
     Column('title', String),                    # title 
     Column('author', String),                   # author 
     Column('created_utc', Time),                # time of creation in utc
