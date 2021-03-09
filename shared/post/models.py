@@ -4,31 +4,31 @@ from sqlalchemy import Integer, Float, Boolean, String, Time
 from shared.core.db import Base
 
 class Post(Base):
-    __tablename__ = 'Post'
+    __tablename__ = 'Posts'
 
-    Column('id', Integer, primary_key=True),    # unique id 
-    Column('title', String),                    # title 
-    Column('author', String),                   # author 
-    Column('created_utc', Time),                # time of creation in utc
-    Column('score', Integer),                   # score 
-    Column('upvote_ratio', Float),              # upvote ratio (upvote/total votes)
-    Column('num_comments', Integer),            # number of comments on post
-    Column('num_crossposts', Integer),          # number of crossposts 
-    Column('total_awards_received', Integer),   # total number of received awards
-    Column('subreddit_name', String),           # name of subreddit (r/subreddit)
-    Column('subreddit_id', String),             # unique id of subreddit
-    Column('subreddit_subscribers', Integer),   # number of subscribers to subreddit
-    Column('domain', String),                   # domain hosting content
-    Column('permalink', String),                # permalink to post
-    Column('url', String),                      # url of the content
-    Column('gilded', Integer),                  # number of total gildings 
-    Column('gilded_silver', Integer),           # number of silver awards
-    Column('gilded_gold', Integer),             # number of gold awards
-    Column('gilded_platinum', Integer),         # number of platinum awards
-    Column('is_locked', Boolean),               # is the post locked
-    Column('is_meta', Boolean),                 # is the post meta
-    Column('is_nsfw', Boolean),                 # is the post nsfw
-    Column('is_oc', Boolean),                   # is the post oc
-    Column('is_self', Boolean),                 # is the post a self post
-    Column('is_spoiler', Boolean),              # is the post a spoiler
-    Column('is_video', Boolean)                 # is the post a video
+    id = Column(Integer, primary_key=True)      # unique id 
+    title = Column(String)                      # title 
+    author = Column(String)                     # author 
+    created_utc = Column(Time)                  # time of creation in utc
+    score = Column(Integer)                     # score 
+    upvote_ratio = Column(Float)                # upvote ratio (upvote/total votes)
+    num_comments = Column(Integer)              # number of comments on post
+    num_crossposts = Column(Integer)            # number of crossposts 
+    total_awards_received = Column(Integer)     # total number of received awards
+    subreddit_name = Column(String)             # name of subreddit (r/subreddit)
+    subreddit_id = Column(String)               # unique id of subreddit
+    subreddit_subscribers = Column(Integer)     # number of subscribers to subreddit
+    domain = Column(String)                     # domain hosting content
+    permalink = Column(String)                  # permalink to post
+    url = Column(String)                        # url of the content
+    gilded = Column(Integer)                    # number of total gildings 
+    gilded_silver = Column(Integer)             # number of silver awards
+    gilded_gold = Column(Integer)               # number of gold awards
+    gilded_platinum = Column(Integer)           # number of platinum awards
+    is_locked = Column(Boolean)                 # is the post locked
+    is_meta = Column(Boolean)                   # is the post meta
+    is_nsfw = Column(Boolean)                   # is the post nsfw
+    is_oc = Column(Boolean)                     # is the post oc
+    is_self = Column(Boolean)                   # is the post a self post
+    is_spoiler = Column(Boolean)                # is the post a spoiler
+    is_video = Column(Boolean)                  # is the post a video
