@@ -1,9 +1,10 @@
 import praw
 import pprint
-import shared.core.db as db
 
-# Config containing personal use script and  secret token
+
+import shared.core.db as db
 from shared.core.config import Client
+from shared.posts import post, utils
 
 reddit = praw.Reddit(
     client_id=Client.ID,

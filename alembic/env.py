@@ -5,7 +5,7 @@ from sqlalchemy import pool
 from alembic import context
 
 from shared.core import config as conf
-from shared.post import models as post_model
+from shared.posts import models as post_model
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

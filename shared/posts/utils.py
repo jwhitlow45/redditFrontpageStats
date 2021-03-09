@@ -30,5 +30,3 @@ def post_id_to_int(post_id:str) -> int:
         dec_value = dec_value+(dec_equiv*(36**index))
 
     return dec_value
-
-print(post_id_to_int('100'))
