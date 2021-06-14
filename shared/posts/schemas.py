@@ -1,4 +1,4 @@
-from typing import Any, List, Optional
+from datetime import datetime
 import pydantic
 
 class Post(pydantic.BaseModel):
@@ -6,27 +6,29 @@ class Post(pydantic.BaseModel):
     class Config:
         extra = 'ignore'
 
-    id: str
+    id: int
     title: str
     author: str
-    created_utc : int
+    created_utc : datetime
     score: int
     upvote_ratio: float
     num_comments: int
     num_crossposts: int
     total_awards_received: int
-    subreddit_name_prefixed: bool
+    subreddit_name: str
     subreddit_id: str
     subreddit_subscribers: int
     domain: str
     permalink: str
     url: str
     gilded: int
-    gildings: List[int]
-    locked: bool
+    gilded_silver: int
+    gilded_gold: int
+    gilded_platinum: int
+    is_locked: bool
     is_meta: bool
-    over_18: bool
-    is_original_content: bool
+    is_nsfw: bool
+    is_oc: bool
     is_self: bool
-    spoiler: bool
+    is_spoiler: bool
     is_video: bool
