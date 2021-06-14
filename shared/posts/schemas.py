@@ -9,7 +9,7 @@ class Post(pydantic.BaseModel):
     id: int
     title: str
     author: str
-    created_utc : datetime
+    created_utc : int
     score: int
     upvote_ratio: float
     num_comments: int

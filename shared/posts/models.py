@@ -9,7 +9,7 @@ class Post(Base):
     id = Column(Integer, primary_key=True)      # unique id 
     title = Column(String)                      # title 
     author = Column(String)                     # author 
-    created_utc = Column(DateTime)              # time of creation in utc
+    created_utc = Column(Integer)               # time of creation in utc
     score = Column(Integer)                     # score 
     upvote_ratio = Column(Float)                # upvote ratio (upvote/total votes)
     num_comments = Column(Integer)              # number of comments on post
