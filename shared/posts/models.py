@@ -1,5 +1,5 @@
 from sqlalchemy import Column
-from sqlalchemy import Integer, Float, Boolean, String, Time
+from sqlalchemy import Integer, Float, Boolean, String, DateTime
 
 from shared.core.db import Base
 
@@ -9,7 +9,7 @@ class Post(Base):
     id = Column(Integer, primary_key=True)      # unique id 
     title = Column(String)                      # title 
     author = Column(String)                     # author 
-    created_utc = Column(Time)                  # time of creation in utc
+    created_utc = Column(DateTime)              # time of creation in utc
     score = Column(Integer)                     # score 
     upvote_ratio = Column(Float)                # upvote ratio (upvote/total votes)
     num_comments = Column(Integer)              # number of comments on post
