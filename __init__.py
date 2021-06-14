@@ -61,6 +61,33 @@ def update_posts_from_frontpage():
     with db.session_manager() as session:
         pass
 
-
+def print_post(p):
+    print("id: " + str(p.id))
+    print("title: " + str(p.title))
+    print("author: " + str(p.author))
+    print("created_utc: " + str(p.created_utc))
+    print("score: " + str(p.score))
+    print("upvote_ratio: " + str(p.upvote_ratio))
+    print("num_comments: " + str(p.num_comments))
+    print("num_crossposts: " + str(p.num_crossposts))
+    print("total_awards_received: " + str(p.total_awards_received))
+    print("subreddit_name: " + str(p.subreddit_name))
+    print("subreddit_id: " + str(p.subreddit_id))
+    print("subreddit_subscribers: " + str(p.subreddit_subscribers))
+    print("domain: " + str(p.domain))
+    print("permalink: " + str(p.permalink))
+    print("url: " + str(p.url))
+    print("gilded: " + str(p.gilded))
+    print("gilded_silver: " + str(p.gilded_silver))
+    print("gilded_gold: " + str(p.gilded_gold))
+    print("gilded_platinum: " + str(p.gilded_platinum))
+    print("is_locked: " + str(p.is_locked))
+    print("is_meta: " + str(p.is_meta))
+    print("is_nsfw: " + str(p.is_nsfw))
+    print("is_oc: " + str(p.is_oc))
+    print("is_self: " + str(p.is_self))
+    print("is_spoiler: " + str(p.is_spoiler))
+    print("is_video: " + str(p.is_video))
+    print("")
 
 update_posts_from_frontpage()
