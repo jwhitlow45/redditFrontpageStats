@@ -1,10 +1,10 @@
 import pydantic
-from shared.posts.models import Post
 import praw
-import pprint
+from typing import List
 
 import shared.core.db as db
 from shared.core.config import Client
+from shared.posts import models
 from shared.posts import utils
 
 reddit = praw.Reddit(
@@ -24,10 +24,10 @@ def update_posts_from_frontpage():
 
     #for post in r/all
     for p in subreddit.hot(limit=POST_NUMBER):
-        currPost = Post(
+        currPost = models.Post(
             id=utils.post_id_to_int(p.id),
             title=p.title,
-            author=p.author,
+            author=str(p.author),
             created_utc=int(p.created_utc),
             score=p.score,
             upvote_ratio=p.upvote_ratio,
@@ -55,10 +55,10 @@ def update_posts_from_frontpage():
         FrontpagePosts.append(currPost)
         pass
 
-    for post in FrontpagePosts:
-        print_post(post)
-
     with db.session_manager() as session:
+        for post in FrontpagePosts:
+            session.merge(post)
+        session.commit()
         pass
 
 def print_post(p):
