@@ -5,6 +5,7 @@ from sqlalchemy import pool
 
 from alembic import context
 
+from shared.core import config as conf
 from shared.posts import models as post_model
 
 # this is the Alembic Config object, which provides
@@ -26,6 +27,7 @@ target_metadata = post_model.Post.metadata
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
 
+config.set_main_option('sqlalchemy.url', conf.SQLEngine.CONNECTION_STR)
 
 def run_migrations_offline():
     """Run migrations in 'offline' mode.
